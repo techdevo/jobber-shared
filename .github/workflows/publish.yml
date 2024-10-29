@@ -17,9 +17,9 @@ jobs:
           node-version: '20.8.0'
       - run: npm install
       - run: npm run build
-      - run: 
+      - run: | 
           echo @github:https://npm.pkg.github.com/ > build/.npmrc
-          echo `//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> build/.npmrc
+          echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> build/.npmrc
       - run: npm publish
         working-directory: ./build
         env:
